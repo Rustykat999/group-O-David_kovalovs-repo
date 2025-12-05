@@ -16,14 +16,19 @@ document.addEventListener('DOMContentLoaded', function () {
         popupOverlay.style.display = 'none';
     }
 
-    // Function to submit the signup form
-    function submitForm() {
-        const email = emailInput.value;
-		
-        // Add your form submission logic here
-        console.log(`Email submitted: ${email}`);
-        closePopupFunc(); // Close the popup after form submission
+   // Function to submit the signup form
+function submitForm() {
+    const email = emailInput.value.trim();
+
+    // Simple email validation
+    if (!email || !email.includes('@') || !email.includes('.')) {
+        alert("Please enter a valid email address.");
+        return; // Stop form submission
     }
+
+    console.log(`Email submitted: ${email}`);
+    closePopupFunc(); // Close the popup after form submission
+}
 
     // Event listeners
 
